@@ -1,0 +1,15 @@
+torch>=2.0
+numpy
+pyyaml
+pytest
+transformers
+accelerate
+datasets
+peft
+safetensors
+huggingface_hub
+typer
+rich
+fastapi
+uvicorn
+requests

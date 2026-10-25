@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "uatp"
+version = "0.1.0"
+description = "Universal AI Training Platform"
+requires-python = ">=3.10"
+dependencies = [
+  "torch>=2.0",
+  "numpy",
+  "pyyaml",
+  "pytest",
+  "transformers",
+  "accelerate",
+  "datasets",
+  "peft",
+  "safetensors",
+  "huggingface_hub",
+  "typer",
+  "rich",
+  "fastapi",
+  "uvicorn",
+  "requests",
+]
+
+[project.scripts]
+uatp = "uatp.cli:app"
+platform = "uatp.cli:app"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]

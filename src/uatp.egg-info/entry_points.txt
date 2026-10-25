@@ -1,0 +1,3 @@
+[console_scripts]
+platform = uatp.cli:app
+uatp = uatp.cli:app

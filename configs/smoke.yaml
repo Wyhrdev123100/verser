@@ -1,0 +1,26 @@
+run_id: null
+model:
+  source: toy
+  model_id: toy-gpt
+  model_type: causal_lm
+  dtype: fp32
+dataset:
+  source: local
+  dataset_id: data/train/train.jsonl
+  text_column: text
+  max_samples: 64
+training:
+  mode: pretrain
+  epochs: 1
+  max_steps: 12
+  micro_batch_size: 4
+  gradient_accumulation: 2
+  sequence_length: 16
+  learning_rate: 0.001
+  checkpoint_every: 4
+  log_every: 2
+storage:
+  root: ./runs
+hardware:
+  mode: balanced
+  force_cpu: true

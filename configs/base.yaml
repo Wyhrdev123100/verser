@@ -1,0 +1,37 @@
+wynr_version: "1.0.0"
+
+model:
+  d_model: 256
+  n_layers: 4
+  n_heads: 8
+  d_ff: 1024
+  vocab_size: 512
+  max_seq_len: 128
+  dropout: 0.1
+  moe_num_experts: 8
+  moe_top_k: 2
+  moe_loss_weight: 0.01
+
+training:
+  batch_size: 4
+  gradient_accumulation_steps: 4
+  learning_rate: 3e-4
+  weight_decay: 0.01
+  max_steps: 3000
+  eval_every_n_steps: 100
+  warmup_steps: 100
+  scheduler: cosine
+  mixed_precision: true
+  gradient_clipping: 1.0
+  seed: 42
+
+data:
+  max_seq_len: 128
+  train_file: data/train/train.jsonl
+  validation_file: data/val/val.jsonl
+
+tokenizer:
+  type: sentencepiece_bpe
+  version: 1
+  vocab_size: 1000
+  source: synthetic_v1

@@ -1,0 +1,7 @@
+torch>=2.0
+sentencepiece>=0.1.99
+numpy
+pyyaml
+pytest
+transformers
+accelerate
